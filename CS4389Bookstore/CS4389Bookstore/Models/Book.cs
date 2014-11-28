@@ -28,5 +28,6 @@ namespace CS4389Bookstore.Models
         public string BookArtUrl { get; set; }
         public virtual Genre Genre { get; set; }
         public virtual Author Author { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }

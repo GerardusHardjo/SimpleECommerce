@@ -1,7 +1,28 @@
 ﻿@model CS4389Bookstore.Models.Book
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Book - " + Model.Title;
 }
 
 <h2>Book: @Model.Title</h2>
+<div class="col-md-6">
+    <img alt="@Model.Title" src="@Model.BookArtUrl" height="400" width="250" />
+</div>
+<div id="book-details" class="col-md-6">
+    <p>
+        <em>Genre:</em>
+        @Model.Genre.Name
+    </p>
+    <p>
+        <em>Author:</em>
+        @Model.Author.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}", Model.Price)
+    </p>
+    <br />
+    <p>
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.BookId }, new { @class = "btn btn-info" })
+    </p>
+</div>

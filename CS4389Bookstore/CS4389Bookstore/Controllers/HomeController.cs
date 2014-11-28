@@ -3,30 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CS4389Bookstore.Models;
 
 namespace CS4389Bookstore.Controllers
 {
     public class HomeController : Controller
     {
+        BookstoreEntities storeDB = new BookstoreEntities();
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            var albums = GetTopSellingBooks(4);
 
-            return View();
+            return View(albums);
         }
 
-        public ActionResult About()
+        private List<Book> GetTopSellingBooks(int count)
         {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            // Group the order details by book and return
+            // the books with the highest count
+            return storeDB.Books.OrderByDescending(a => a.OrderDetails.Count()).Take(count).ToList();
         }
     }
 }

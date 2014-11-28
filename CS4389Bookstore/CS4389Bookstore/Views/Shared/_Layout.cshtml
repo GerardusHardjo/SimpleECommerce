@@ -7,10 +7,15 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Scripts/bootstrap.js"></script>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/themes/bootstrap-theme.css" rel="stylesheet" />
+        <link href="~/Content/shop-homepage.css" rel="stylesheet" />
     </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
+<body style="background-color:beige;" >
+    <header >
+        <div class="content-wrapper container">
+            <div class="row">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("Atlantis Bookstore", "Index", "Home")</p>
                 </div>
@@ -20,28 +25,38 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Store", "Index", "Store")</li>
+                            <li>@Html.ActionLink("Store", "Index", "Home")</li>
+                            <li style="color:grey"> | </li>
+                            @*<li>@Html.ActionLink("Store", "Index", "Store")</li>
+                            <li style="color:grey"> | </li>*@
+                            <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+                            <li style="color:grey"> | </li>
+                            <li><a href="@Url.Content("~/StoreManager/")">Admin</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+    </header>
+    <div id="body" style="background-color:azure">
+        <section class="content-wrapper main-content clear-fix">
+            <div class="col-md-3">
+                <div class="container">
+                    <div class="row">
+                        <u>Browse by Genre:</u>
+                    </div>
+                    <div class="row">
+                        @{Html.RenderAction("GenreMenu", "Store");}
+                    </div>
                 </div>
             </div>
-        </footer>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </section>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
 </html>

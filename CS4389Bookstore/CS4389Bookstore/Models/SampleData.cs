@@ -32,7 +32,7 @@ namespace CS4389Bookstore.Models
 
             new List<Book>
             {
-                new Book { Title = "Pet Semetary", Genre = genres.Single(g => g.Name == "Horror"), Price = 8.99M, Author = authors.Single(a => a.Name == "Stephen King"), BookArtUrl = "/Content/Images/PS.jpg" },
+                new Book { Title = "Pet Sematary", Genre = genres.Single(g => g.Name == "Horror"), Price = 8.99M, Author = authors.Single(a => a.Name == "Stephen King"), BookArtUrl = "/Content/Images/PS.jpg" },
                 new Book { Title = "The Exorcist", Genre = genres.Single(g => g.Name == "Horror"), Price = 8.99M, Author = authors.Single(a => a.Name == "William Peter Blatty"), BookArtUrl = "/Content/Images/TE.JPG" },
                 new Book { Title = "A Game of Thrones", Genre = genres.Single(g => g.Name == "Fantasy"), Price = 8.99M, Author = authors.Single(a => a.Name == "George R. R. Martin"), BookArtUrl = "/Content/Images/GT.jpg" },
                 new Book { Title = "The Name of the Wind", Genre = genres.Single(g => g.Name == "Fantasy"), Price = 8.99M, Author = authors.Single(a => a.Name == "Patrick Rothfuss"), BookArtUrl = "/Content/Images/NW.jpg" },

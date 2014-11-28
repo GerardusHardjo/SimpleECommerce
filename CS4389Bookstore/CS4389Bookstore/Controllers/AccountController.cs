@@ -37,6 +37,8 @@ namespace CS4389Bookstore.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                MigrateShoppingCart(model.UserName);
+
                 return RedirectToLocal(returnUrl);
             }
 
@@ -88,6 +90,8 @@ namespace CS4389Bookstore.Controllers
                     if (!Roles.RoleExists("User"))
                         Roles.CreateRole("User");
                     Roles.AddUserToRole(model.UserName, "User");
+
+                    MigrateShoppingCart(model.UserName);
 
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
@@ -335,6 +339,15 @@ namespace CS4389Bookstore.Controllers
 
             ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        }
+
+        private void MigrateShoppingCart(string UserName)
+        {
+            // Associate shopping cart items with logged-in user
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+
+            cart.MigrateCart(UserName);
+            Session[ShoppingCart.CartSessionKey] = UserName;
         }
 
         #region Helpers

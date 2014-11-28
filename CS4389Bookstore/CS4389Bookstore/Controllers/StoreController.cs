@@ -33,5 +33,12 @@ namespace CS4389Bookstore.Controllers
 
             return View(book);  
         }
+
+        [ChildActionOnly]
+        public ActionResult GenreMenu()
+        {
+            var genres = storeDB.Genres.ToList();
+            return PartialView(genres);
+        }
     }
 }
