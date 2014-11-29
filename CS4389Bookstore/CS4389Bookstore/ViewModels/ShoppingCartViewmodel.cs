@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Collections.Generic;
 using CS4389Bookstore.Models;
 
 namespace CS4389Bookstore.ViewModels

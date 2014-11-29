@@ -18,7 +18,7 @@ namespace CS4389Bookstore
         {
             System.Data.Entity.Database.SetInitializer(new CS4389Bookstore.Models.SampleData());
             AreaRegistration.RegisterAllAreas();
-
+            PayPal.Profile.Initialize("gvgandham-facilitator_api1.yahoo.com", "KG5ESAND9N7TCRU5", "AUcpywXx.N-q2ccujpgGiXSRI2s5ANyYY90j6S6WCEE7XEfvloVjN2DJ", "sandbox");
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

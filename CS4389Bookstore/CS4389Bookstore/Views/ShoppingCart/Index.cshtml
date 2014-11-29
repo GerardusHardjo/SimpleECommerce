@@ -34,9 +34,9 @@
     <em>Review</em> your cart:
 </h3>
 
-<div >
+@*<div >
     @Html.ActionLink("Checkout>>", "AddressAndPayment", "Checkout", null, new { @class = "btn btn-success"})
-</div>
+</div>*@
 
 <div id="update-message">
 </div>
@@ -85,3 +85,27 @@
         </td>
     </tr>
 </table>
+
+@{
+    var amount = Model.CartTotal.ToString();
+    String itemNameString = "";
+    int itemCount = 0;
+    
+    foreach (var item in Model.CartItems)
+    {
+        itemNameString += item.Book.Title + "(" + item.Book.Price + ")";
+        itemCount++;
+        
+        if(itemCount < Model.CartItems.Count)
+        {
+            itemNameString += ", ";
+        }
+    }
+    
+    var paypalButton = PayPal.ButtonManager.BuyNowButton.Create("", itemNameString, amount);
+    HtmlString paypalButtonHtml = new HtmlString(paypalButton.WebSiteCode);
+}
+
+<body style="height:10px; width:100px">
+    @paypalButtonHtml
+</body>

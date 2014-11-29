@@ -39,7 +39,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal">
+      <HintPath>..\packages\PayPal.Helper.1.0.1\lib\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalCoreSDK">
+      <HintPath>..\packages\PayPalCoreSDK.1.6.0\lib\net45\PayPalCoreSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalMerchantSDK">
+      <HintPath>..\packages\PayPalMerchantSDK.2.13.117\lib\net20\PayPalMerchantSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="paypal_base">
+      <HintPath>..\packages\PayPal.Helper.1.0.1\lib\paypal_base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -70,9 +89,6 @@
     <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -274,6 +290,31 @@
     <Content Include="Content\themes\bootstrap-theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="PayPalHelper\Docs\startHere.htm" />
+    <Content Include="PayPalHelper\Docs\startHere.html\html\DocSet_default.html" />
+    <Content Include="PayPalHelper\Docs\startHere.html\html\images\19fb5f20-19a2-4d76-a2b0-fd753895da1e.png" />
+    <Content Include="PayPalHelper\Docs\startHere.html\html\images\45d9257f-f452-491c-a16e-20d3cd1370db.png" />
+    <Content Include="PayPalHelper\Docs\startHere.html\html\images\8b52f348-d854-4a8f-9132-863e0fce5da9.png" />
+    <Content Include="PayPalHelper\Docs\startHere.html\html\images\c3431829-bc93-4403-921f-b35745aedb75.png" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\Classic.css" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\collall.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\collapse_all.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\copycode.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\copycodeHighlight.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\Dropdown.js" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\drpdown.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\drpdown_orange.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\EventUtilities.js" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\exp.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\expall.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\expand_all.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\note.gif" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\samples.js" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\script.js" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\script_chm.js" />
+    <Content Include="PayPalHelper\Docs\startHere.html\local\SplitScreen.js" />
+    <Content Include="PayPalHelper\Docs\startHere.pdf" />
+    <Content Include="PayPalHelper\Docs\startHere.docx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
